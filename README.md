@@ -4,4 +4,4 @@ Personal leadership portfolio of Charles Barton. Static one-page site served by 
 
 - `index.html`: the page (inline CSS, no build step)
 - `CNAME`: custom domain
-- `robots.txt` and the `noindex` meta tag keep the site out of search until the public launch
+- `robots.txt`, `sitemap.xml` and `llms.txt` help search engines and AI agents find and read the site
