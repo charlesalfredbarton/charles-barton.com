@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<title>noon · A leadership preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: a product leader's working note to a growth team; calm, exact, visual.
+   IDEA: a field brief with the working thing on top: the concept first, the reasoning behind it.
+   PICTURE: a live phone concept, "one intent, every service", open on "Guests coming tonight".
+   COLOUR AND TYPE: Midnight and aqua page (Charles's site); a light, unbranded app inside the phone. Newsreader over Inter.
+   LAYOUT: dark hero with the phone, light cards, dark metric tree, light questions and reference. */
+:root{color-scheme:dark;--mid:#0B1626;--raised:#13233A;--line:#24364F;--ivory:#F2F0EA;--mist:#A7B3C3;--aqua:#4FC3BA;--porc:#F3F1EC;--ink:#14202F;--teal:#13706B;--app:#4353C8}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--mid);color:var(--ivory);font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Newsreader,Georgia,serif;font-weight:600;line-height:1.08;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+.band{padding:clamp(36px,5vw,76px) max(5vw,18px)}
+.wrap{max-width:1180px;margin:0 auto}
+.eyebrow{font-size:13px;font-weight:600;color:var(--aqua);letter-spacing:.01em;margin-bottom:14px}
+.light{background:var(--porc);color:var(--ink)}
+.light .eyebrow{color:var(--teal)}
+.sec-h{font-size:clamp(26px,3.4vw,38px);margin-bottom:8px}
+.sec-sub{color:var(--mist);max-width:62ch;margin-bottom:28px}
+.light .sec-sub{color:#4a5868}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(24px,4vw,64px);align-items:start}
+.hero h1{font-size:clamp(34px,5vw,56px)}
+.hero h1 em{font-style:normal;color:var(--aqua)}
+.sub{font-size:clamp(17px,1.6vw,20px);color:var(--ivory);margin-top:16px;max-width:34ch}
+.fine{font-size:13px;color:var(--mist);margin-top:12px}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:28px;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;background:var(--raised);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.35}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--aqua);color:var(--mid);font-weight:700;font-size:13px;margin-bottom:8px}
+.steps b{display:block;font-weight:600}
+.steps span{color:var(--mist)}
+.test{margin-top:16px;background:var(--raised);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.test h3{font-size:20px;margin-bottom:4px}
+.test .for{font-size:13px;color:var(--aqua);font-weight:600;margin-bottom:12px}
+.test dl{margin:0;display:grid;grid-template-columns:104px minmax(0,1fr);gap:8px 14px;font-size:14px}
+.test dt{color:var(--mist)}
+.test dd{margin:0}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pills span{border:1px solid var(--line);border-radius:99px;padding:2px 10px;font-size:13px;white-space:nowrap}
+
+/* phone */
+.stage{display:flex;flex-direction:column;align-items:center}
+.phone{width:372px;max-width:100%;background:#0a0f18;border-radius:44px;padding:10px;box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 0 1px #2a3a52}
+.screen{background:#F4F5F7;color:#161B26;border-radius:35px;overflow:hidden;display:flex;flex-direction:column;height:724px;font-family:Inter,system-ui,sans-serif;color-scheme:light}
+.status{display:flex;justify-content:space-between;align-items:center;padding:12px 22px 4px;font-size:13px;font-weight:600}
+.tag{background:#161B26;color:#fff;border-radius:99px;padding:2px 10px;font-size:11px;font-weight:600}
+.top{padding:8px 16px 0;background:#F4F5F7}
+.search{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #DFE3EA;border-radius:14px;padding:0 12px;height:46px}
+.search svg{flex:none;color:#7A8394}
+.search input{border:0;outline:0;background:none;font:16px Inter,system-ui,sans-serif;color:#161B26;width:100%;height:100%}
+.search:focus-within{border-color:var(--app);box-shadow:0 0 0 3px rgba(67,83,200,.15)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:12px 16px 4px;margin:0 -16px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid #DFE3EA;background:#fff;color:#161B26;border-radius:99px;padding:0 14px;height:36px;font:500 14px Inter,system-ui,sans-serif;cursor:pointer;white-space:nowrap}
+.chip[aria-pressed=true]{background:var(--app);border-color:var(--app);color:#fff}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:#E7EAF0;border-radius:11px;padding:3px;margin:10px 0 10px}
+.seg button{border:0;background:none;border-radius:9px;height:34px;font:500 13px Inter,system-ui,sans-serif;color:#4B5565;cursor:pointer}
+.seg button[aria-pressed=true]{background:#fff;color:#161B26;font-weight:600;box-shadow:0 1px 3px rgba(22,27,38,.12)}
+.list{flex:1;overflow-y:auto;padding:2px 16px 14px;scrollbar-width:thin}
+.note{border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.4;margin-bottom:10px}
+.note.m{background:#E9ECFB;color:#27328A}
+.note.n{background:#fff;border:1px dashed #B9C0CE;color:#3A4352}
+.note.f{background:#FFF4E0;color:#6B4A0C}
+.grp{margin-top:6px}
+.grp-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:8px 2px 6px}
+.grp-h b{font-size:15px}
+.grp-h span{font-size:12px;color:#5B6576;text-align:right}
+.card{display:grid;grid-template-columns:52px minmax(0,1fr) 40px;gap:12px;align-items:center;background:#fff;border:1px solid #E6E9EF;border-radius:14px;padding:10px;margin-bottom:8px}
+.thumb{width:52px;height:52px;border-radius:12px;display:grid;place-items:center}
+.t-min{background:#E3F4EA;color:#1E7A48}.t-ton{background:#FDEBDD;color:#B4571A}.t-tom{background:#E9ECFB;color:#3545B5}.t-pro{background:#DDF3F1;color:#13706B}
+.card .nm{font-size:14px;font-weight:500;line-height:1.3}
+.meta{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center;margin-top:4px;font-size:12px;color:#5B6576}
+.price{font-weight:700;color:#161B26;font-size:13px;white-space:nowrap}
+.badge{border-radius:6px;padding:1px 6px;background:#EEF1F5;white-space:nowrap}
+.badge.ret{background:#E3F4EA;color:#1E7A48}
+.badge.sp{background:none;border:1px solid #C9CFDA;color:#5B6576}
+.add{width:40px;height:40px;border-radius:12px;border:1px solid var(--app);background:#fff;color:var(--app);font:600 20px/1 Inter,sans-serif;cursor:pointer;display:grid;place-items:center}
+.add[aria-pressed=true]{background:var(--app);color:#fff}
+.basket{background:#161B26;color:#fff;margin:0 12px 8px;border-radius:14px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px;line-height:1.35}
+.basket b{font-size:14px}
+.basket .r{text-align:right;flex:none}
+.basket .free{color:#9FE3C0;font-weight:600}
+.nav{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-top:1px solid #E6E9EF;padding:8px 6px 12px;font-size:11px;color:#7A8394;text-align:center}
+.nav div{display:grid;justify-items:center;gap:3px}
+.nav .on{color:var(--app);font-weight:600}
+.cap{font-size:13px;color:var(--mist);text-align:center;margin-top:14px;max-width:340px}
+button:focus-visible,a:focus-visible{outline:2px solid var(--aqua);outline-offset:2px}
+
+/* shifts */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.shift{background:#fff;border:1px solid #E2DED4;border-radius:16px;padding:22px;display:flex;flex-direction:column}
+.vis{min-height:92px;margin-bottom:16px;display:flex;align-items:center}
+.icons{display:flex;flex-wrap:wrap;gap:6px}
+.icons span{background:#EAF4F3;color:var(--teal);border-radius:8px;padding:5px 9px;font-size:13px;font-weight:500;white-space:nowrap}
+.icons span.k{background:none;border:1px dashed #9db9b6}
+.tl{list-style:none;margin:0;padding:0 0 0 14px;border-left:2px solid #CFE3E1;display:grid;gap:5px;font-size:13px}
+.tl li{position:relative}
+.tl li::before{content:"";position:absolute;left:-19px;top:7px;width:8px;height:8px;border-radius:50%;background:var(--teal)}
+.tl li:last-child{font-weight:600;color:var(--teal)}
+.path{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:14px}
+.path b{background:var(--ink);color:#fff;border-radius:8px;padding:6px 12px;font-weight:600}
+.path i{font-style:normal;color:var(--teal);font-size:18px}
+.path span{flex-basis:100%;border:1px dashed #9db9b6;border-radius:8px;padding:5px 9px;font-size:13px;color:var(--teal)}
+.shift h3{font-size:24px;margin-bottom:8px}
+.shift p{font-size:15px;color:#33404F}
+.sig{font-size:12.5px;color:#5d6a79;margin-top:14px;line-height:1.5}
+.sig a{text-decoration:underline;text-underline-offset:2px}
+.q{margin-top:auto;padding-top:16px}
+.q div{border-top:1px solid #E2DED4;padding-top:12px;font-size:15px;font-weight:600;color:var(--teal)}
+.q small{display:block;font-weight:500;font-size:12.5px;color:#5d6a79;margin-bottom:2px}
+
+/* metric tree */
+.tree{display:grid;gap:0;justify-items:center}
+.ns{background:var(--aqua);color:var(--mid);border-radius:14px;padding:16px 22px;text-align:center;max-width:460px}
+.ns small{display:block;font-size:13px;font-weight:600;opacity:.75}
+.ns b{font-family:Newsreader,Georgia,serif;font-size:clamp(20px,2.4vw,26px);line-height:1.15}
+.stem{width:2px;height:26px;background:var(--line)}
+.row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;width:100%;border-top:2px solid var(--line);padding-top:18px}
+.node{background:var(--raised);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:15px}
+.node small{display:block;color:var(--aqua);font-size:12.5px;font-weight:600;margin-bottom:3px}
+.guard{width:100%;margin-top:22px;border:1px dashed #3b5376;border-radius:14px;padding:16px 18px}
+.guard h3{font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:var(--mist);margin-bottom:10px}
+.guard .pills span{font-size:14px;padding:5px 12px;border-color:#3b5376}
+.guard p{font-size:13px;color:var(--mist);margin-top:10px}
+
+/* questions + reference */
+.qs{list-style:none;counter-reset:q;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.qs li{counter-increment:q;background:#fff;border:1px solid #E2DED4;border-radius:14px;padding:16px 18px 16px 54px;position:relative;font-size:15.5px}
+.qs li::before{content:counter(q);position:absolute;left:16px;top:14px;font:600 26px Newsreader,Georgia,serif;color:var(--teal)}
+.qs li:last-child{grid-column:1/-1}
+.ref{margin-top:clamp(40px,5vw,64px);border-top:1px solid #D9D5CA;padding-top:clamp(28px,4vw,44px)}
+.ref h2{font-size:clamp(22px,2.6vw,28px);margin-bottom:6px}
+.days{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:2px solid var(--teal)}
+.days li{padding:14px 16px 0 0;position:relative;font-size:14.5px;color:#33404F}
+.days li::before{content:"";position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:var(--teal)}
+.days b{display:block;font:600 20px Newsreader,Georgia,serif;color:var(--ink);margin-bottom:2px}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:30px}
+.tile{background:var(--ink);color:var(--ivory);border-radius:16px;padding:20px}
+.tile b{display:block;font:600 clamp(20px,2.1vw,25px)/1.15 Newsreader,Georgia,serif;color:var(--aqua);margin-bottom:8px}
+.tile p{font-size:14px;color:#C9D2DE}
+.cv{display:inline-flex;align-items:center;gap:8px;margin-top:24px;background:var(--teal);color:#fff;text-decoration:none;font-weight:600;border-radius:12px;padding:0 20px;height:48px}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.links .cv{margin-top:0}.cv.alt{background:none;color:var(--teal);border:1.5px solid var(--teal)}
+footer{padding:26px max(5vw,18px);font-size:13.5px;color:var(--mist);border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between}
+footer a{white-space:nowrap}
+
+@media(max-width:940px){
+  .hero{grid-template-columns:minmax(0,1fr)}
+  .stage{order:2}.below{order:3}
+  .hero-l{display:contents}
+  .intro{order:1}
+  .cards,.tiles{grid-template-columns:minmax(0,1fr)}
+  .vis{min-height:0}
+}
+@media(max-width:600px){
+  .steps,.row,.qs,.days{grid-template-columns:minmax(0,1fr)}
+  .days{border-top:0;border-left:2px solid var(--teal);margin-left:6px}
+  .days li{padding:0 0 16px 18px}
+  .days li::before{top:6px;left:-7px}
+  .phone{width:100%;border-radius:30px;padding:7px}
+  .screen{border-radius:24px;height:680px}
+  .test dl{grid-template-columns:minmax(0,1fr);gap:2px}
+  .test dd{margin-bottom:8px}
+  .steps li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:0 12px}
+  .steps li::before{grid-row:1/3;margin:0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="band">
+  <div class="wrap hero">
+    <div class="hero-l">
+      <div class="intro">
+        <p class="eyebrow">noon · VP - Product · A leadership preview by Charles Barton</p>
+        <h1>From the category tree to the customer's <em>moment</em>.</h1>
+        <p class="sub">A working concept for noon's consumer app: one intent, every service.</p>
+        <p class="fine">Prepared from public information, November 2026. Hypotheses to test with you, not conclusions.</p>
+      </div>
+      <div class="below">
+        <ol class="steps">
+          <li><b>Pick a moment</b><span>Not a category.</span></li>
+          <li><b>See every service that solves it</b><span>Grouped by speed.</span></li>
+          <li><b>One basket</b><span>One membership saving.</span></li>
+        </ol>
+        <section class="test" aria-live="polite">
+          <h3>The test behind it</h3>
+          <p class="for" id="t-for"></p>
+          <dl>
+            <dt>Hypothesis</dt><dd id="t-h"></dd>
+            <dt>Audience</dt><dd id="t-a"></dd>
+            <dt>Primary metric</dt><dd id="t-m"></dd>
+            <dt>Guardrails</dt><dd><div class="pills" id="t-g"></div></dd>
+            <dt>Readout</dt><dd>Two weeks.</dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="phone">
+        <div class="screen">
+          <div class="status"><span>9:41</span><span class="tag">Concept</span></div>
+          <div class="top">
+            <label class="search">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <input id="q" type="search" placeholder="What do you need today?" autocomplete="off" aria-label="What do you need today?">
+            </label>
+            <div class="chips" id="chips" role="group" aria-label="Moments"></div>
+            <div class="seg" role="group" aria-label="Customer view">
+              <button id="v-new" aria-pressed="true">New customer</button>
+              <button id="v-mem" aria-pressed="false">noon One member</button>
+            </div>
+          </div>
+          <div class="list" id="list"></div>
+          <div class="basket" id="basket"></div>
+          <div class="nav" aria-hidden="true">
+            <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 11 12 4l8 7v9H4z"/></svg>Home</div>
+            <div class="on"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>Moments</div>
+            <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M5 8h14l-1.5 11h-11z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>Basket</div>
+            <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="9" r="3.5"/><path d="M5 20c1-4 13-4 14 0"/></svg>Account</div>
+          </div>
+        </div>
+      </div>
+      <p class="cap">Concept built from public information. Not a noon product; sample data. Tap a moment, switch the customer view, add items.</p>
+    </div>
+  </div>
+</header>
+
+<section class="band light">
+  <div class="wrap">
+    <p class="eyebrow">Why now</p>
+    <h2 class="sec-h">Three shifts noon is navigating</h2>
+    <p class="sec-sub">An outside-in read, each with the public signals behind it and the question it raises.</p>
+    <div class="cards">
+      <article class="shift">
+        <div class="vis"><div class="icons"><span>Marketplace</span><span>Minutes</span><span>Food</span><span>Grocery</span><span>Home services</span><span>noon One</span><span class="k">Jahez restaurants in KSA</span></div></div>
+        <h3>One app, many doors.</h3>
+        <p>The menu was built for a catalog. Customers now arrive with a moment: guests tonight, running low, the AC broke.</p>
+        <p class="sig">Signals: <a href="https://gulfbusiness.com/en/2026/lists/meet-the-30-companies-shaping-the-gulfs-future/noon">Gulf Business, 15 Oct 2026</a> · <a href="https://www.zawya.com/en/press-release/companies-news/noon-and-urban-company-limited-partner-to-deliver-home-services-across-uae-and-ksa-nybq7b5v">Urban Company in the noon app, Zawya, 12 May 2025</a> · <a href="https://www.argaam.com/en/article/articledetail/id/1854163">Jahez partnership, Argaam, 30 Oct 2025</a></p>
+        <div class="q"><div><small>The question it raises</small>What if discovery started from the moment, not the category?</div></div>
+      </article>
+      <article class="shift">
+        <div class="vis"><ul class="tl"><li>Amazon Now: 15-minute delivery in the UAE (Oct 2025)</li><li>talabat invests in grocery and its Pro membership (Q3 2026)</li><li>Keeta's push in Saudi Arabia</li><li>noon One across shopping, food and quick commerce</li></ul></div>
+        <h3>The daily habit is the battleground.</h3>
+        <p>Everyone is competing for frequency. noon's edge is breadth: the customer who uses one service is one good moment away from a second and a third.</p>
+        <p class="sig">Signals: Gulf News, 16 Nov 2026 (talabat Q3 results) · Amazon UAE, Oct 2025 · noon says members order more often (<a href="https://food-partners.noon.com">noon Food partners page</a>, Nov 2026)</p>
+        <div class="q"><div><small>The question it raises</small>How many customers use two or more noon services, and what moves the next one?</div></div>
+      </article>
+      <article class="shift">
+        <div class="vis"><div class="path"><b>Profit</b><i>→</i><b>Listing</b><span>AI shopping assistants arriving in the UAE</span></div></div>
+        <h3>Growth that shows up in margin.</h3>
+        <p>With profit before the planned listing, engagement has to come from relevance and well-timed re-engagement more than from discounts. AI-assisted discovery around local moments is where I would want to push first.</p>
+        <p class="sig">Signals: <a href="https://www.khaleejtimes.com/uae/noon-ipo-dual-listing-saudi-plans">Khaleej Times</a> and Argaam, Sep 2025 · Semafor, 12 Dec 2025 · Amazon UAE (Alexa for Shopping beta), 2026</p>
+        <div class="q"><div><small>The question it raises</small>Which engagement gains also improve contribution margin per order?</div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Measurement</p>
+    <h2 class="sec-h">How we would know it works</h2>
+    <p class="sec-sub">One number to move, three drivers behind it, and guardrails that keep the growth honest.</p>
+    <div class="tree">
+      <div class="ns"><small>North star</small><b>Customers ordering from 2+ services within 30 days</b></div>
+      <div class="stem"></div>
+      <div class="row">
+        <div class="node"><small>Driver</small>Discovery-to-cart conversion</div>
+        <div class="node"><small>Driver</small>noon One activation and 90-day retention</div>
+        <div class="node"><small>Driver</small>Order frequency by cohort</div>
+      </div>
+      <div class="guard">
+        <h3>Guardrails</h3>
+        <div class="pills"><span>Contribution margin per order</span><span>Ad revenue per session</span><span>Core search conversion</span><span>Delivery cost per order</span><span>App speed</span></div>
+        <p>Ad load is tested against conversion and margin, not set by opinion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band light">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">For reference</p>
+      <h2>How I would start, and what I have done</h2>
+      <p class="sec-sub" style="margin-bottom:0">Bets I would bring to the Head of Product's agenda, on a 90-day path.</p>
+      <ol class="days">
+        <li><b>Week 2</b>A discovery and cross-service baseline dashboard, built hands-on.</li>
+        <li><b>Day 30</b>The first moment-based experiment live.</li>
+        <li><b>Day 60</b>Three readouts: scale what works, stop what doesn't.</li>
+        <li><b>Day 90</b>Squad goals agreed with the Head of Product and the growth team, and a two-quarter roadmap for frequency and margin.</li>
+      </ol>
+      <div class="tiles">
+        <div class="tile"><b>10M+ users · +120% activation</b><p>Took an AI personalization product from funnel analysis and user research to production.</p></div>
+        <div class="tile"><b>3,000+ brands · 700M+ shoppers</b><p>As Head of Product for SAP Commerce, owned search, navigation, merchandising, personalization and promotions for the platform retailers such as H&amp;M, Costco, Adidas and Douglas run on: a library of discovery patterns across thousands of shops.</p></div>
+        <div class="tile"><b>$400M+ revenue at 50-60% a year</b><p>Took SAP Commerce Cloud from five early adopters to $400M+, with one strategy-to-OKR rhythm across 20+ product teams and launches validated through experiments.</p></div>
+      </div>
+      <p class="links"><a class="cv" href="https://charles-barton.com">charles-barton.com</a><a class="cv alt" href="https://www.linkedin.com/in/charlesalfredbarton">LinkedIn</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Charles Barton · Prepared November 2026</span>
+    <span><a href="https://charles-barton.com">charles-barton.com</a> · <a href="https://www.linkedin.com/in/charlesalfredbarton">linkedin.com/in/charlesalfredbarton</a></span>
+  </div>
+</footer>
+
+<script>
+{
+const P=(d)=>'<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">'+d+'</svg>';
+const ICON={
+  bag:P('<path d="M6 8h12l-1 12H7z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>'),
+  cup:P('<path d="M7 5h10l-1.2 14H8.2z"/><path d="M7.5 10h9"/>'),
+  plate:P('<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/>'),
+  cake:P('<path d="M5 19h14v-7H5z"/><path d="M5 15c2 1.5 3-1.5 5 0s3-1.5 5 0 2-1 4 0"/><path d="M12 12V8"/><path d="M12 5.5v.5"/>'),
+  bowl:P('<path d="M4 11h16a8 8 0 0 1-16 0z"/><path d="M9 20h6"/>'),
+  candle:P('<path d="M9 20V11h6v9z"/><path d="M12 11V9"/><path d="M12 4c1.5 1.5 1.5 3 0 4-1.5-1-1.5-2.5 0-4z"/>'),
+  clean:P('<path d="M12 4v6M9 7h6"/><path d="M6 13l1.2 3.3L10.5 17.5 7.2 18.7 6 22l-1.2-3.3L1.5 17.5l3.3-1.2z" transform="translate(4 -3)"/><path d="M17 15v4M15 17h4"/>'),
+  carton:P('<path d="M8 9l2-4h4l2 4v11H8z"/><path d="M8 9h8"/><path d="M10 14h4"/>'),
+  basket:P('<path d="M4 10h16l-1.6 9H5.6z"/><path d="M8 10l3-5M16 10l-3-5"/>'),
+  fan:P('<circle cx="12" cy="10" r="6"/><circle cx="12" cy="10" r="1.2"/><path d="M12 16v4M8 20h8"/>'),
+  wrench:P('<path d="M14.5 6.5a4 4 0 0 0-5 5L4 17l3 3 5.5-5.5a4 4 0 0 0 5-5L15 12l-3-3z"/>'),
+  box:P('<path d="M4 8l8-4 8 4v9l-8 4-8-4z"/><path d="M4 8l8 4 8-4M12 12v9"/>'),
+  truck:P('<path d="M3 7h10v9H3z"/><path d="M13 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/>'),
+  pot:P('<path d="M5 10h14v6a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3z"/><path d="M3 10h18M9 7h6"/>')
+};
+const G={
+  min:{t:'In minutes',s:'Quick commerce · about 15 min',c:'t-min',fee:7,svc:'quick commerce'},
+  ton:{t:'Tonight',s:'Food · in 35 to 45 min',c:'t-ton',fee:9,svc:'food'},
+  tom:{t:'Tomorrow',s:'Marketplace · next-day delivery',c:'t-tom',fee:10,svc:'marketplace'},
+  pro:{t:'Book a pro',s:'Home services · pick a slot',c:'t-pro',fee:0,svc:'home services'}
+};
+const GR=['Contribution margin per order','Core search conversion','Delivery cost per order','App speed'];
+const M={
+  guests:{label:'Guests coming tonight',order:['min','ton','tom','pro'],
+    k:/\b(guests?|host(ing)?|party|dinner|visitors?|friends)\b/,
+    items:[
+      ['min','Party snacks and soft drinks bundle',45,'bag',1],['min','Ice and disposable cups',18,'cup',0,'sp'],
+      ['ton','Sharing platter for six, nearby restaurant',149,'plate',1],['ton','Dessert box',65,'cake',0,'sp'],
+      ['tom','Serving bowls set',89,'bowl',1],['tom','Scented candles',49,'candle',0,'sp'],
+      ['pro','Home cleaning, 2 hours, before guests arrive',120,'clean',1]],
+    h:'Starting from "Guests coming tonight" lifts customers ordering from 2+ services within 30 days.',
+    a:'10% of UAE app users; new and member cohorts read separately.',
+    m:'Customers ordering from 2+ services within 30 days.'},
+  low:{label:'Running low',order:['min','tom'],
+    k:/\b(low|milk|eggs?|bread|grocer(y|ies)|usual|top.?up|restock|water)\b/,
+    items:[
+      ['min','Your usual top-up: milk, eggs, bread, water',58,'basket',1],['min','Fresh fruit box',36,'bag',0,'sp'],
+      ['tom','Laundry detergent, bulk pack',64,'carton',1],['tom','Dishwasher tablets, 60 pack',52,'box',0,'sp']],
+    h:'A one-tap "your usual" basket lifts weekly order frequency for customers with two or more quick-commerce orders.',
+    a:'Repeat quick-commerce customers in Dubai; 10% test group.',
+    m:'Orders per customer per week; share adding a marketplace item to the same basket.'},
+  ac:{label:'AC needs fixing',order:['pro','min','tom'],
+    k:/\b(ac|a\/c|air.?con(ditioner|ditioning)?|cooling|repair|fix(ing)?|broken|technician)\b/,
+    items:[
+      ['pro','AC repair visit, today, vetted technician',149,'wrench',1],['pro','AC deep clean, two units',199,'clean',0],
+      ['min','Desk fan',79,'fan',1],
+      ['tom','Tower fan with remote',249,'fan',0,'sp'],['tom','AC filters, pack of two',45,'box',0]],
+    h:'Showing a bookable service first for a repair intent lifts first-time home-services bookings without hurting product conversion.',
+    a:'UAE customers searching repair-type terms; 10% test group.',
+    m:'First home-services booking within 7 days of the search.'},
+  move:{label:'Moving flat',order:['tom','pro','min','ton'],
+    k:/\b(mov(e|ing|ers)|flat|apartment|relocat\w*|boxes|new home)\b/,
+    items:[
+      ['tom','Moving boxes, pack of 20, with tape',75,'box',1],['tom','Starter kitchen set, 12 pieces',199,'pot',0,'sp'],
+      ['pro','Movers with a truck, half day',450,'truck',1],['pro','Move-in deep clean',260,'clean',0],
+      ['min','Cleaning supplies bundle',55,'bag',1],
+      ['ton','Dinner for moving day, family meal',69,'plate',0]],
+    h:'A guided "moving" basket raises basket value and brings a first home-services booking, at a healthy margin.',
+    a:'Customers who change their delivery address or search moving terms; 10% test group.',
+    m:'Basket value per moving customer; services attached per basket.'},
+  iftar:{label:'Ramadan: hosting iftar',order:['min','ton','tom','pro'],
+    k:/\b(ramadan|iftar|suhoor|dates)\b/,
+    items:[
+      ['min','Dates and fresh juices',42,'bag',1],['min','Samosa and starter pack',34,'box',0,'sp'],
+      ['ton','Iftar catering box for six',189,'pot',1],
+      ['tom','Serving dishes set',99,'bowl',1],['tom','Lanterns and table lights',59,'candle',0,'sp'],
+      ['pro','Deep clean before Ramadan',220,'clean',0]],
+    h:'A seasonal "hosting iftar" moment, live two weeks before Ramadan, lifts customers ordering from 2+ services through the month.',
+    a:'UAE and KSA app users; 10% test group; member and non-member cohorts.',
+    m:'Customers ordering from 2+ services during Ramadan; noon One activations.'}
+};
+const $=(id)=>document.getElementById(id);
+const esc=(s)=>String(s).replace(/[&<>"']/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let cur='guests',member=false,miss=false;
+const picked={};
+for(const k in M)picked[k]=new Set(M[k].items.map((it,i)=>it[4]?i:-1).filter((i)=>i>=0));
+
+function drawChips(){
+  $('chips').innerHTML=Object.keys(M).map((k)=>'<button class="chip" data-m="'+k+'" aria-pressed="'+(k===cur)+'">'+esc(M[k].label)+'</button>').join('');
+}
+function totals(){
+  const m=M[cur],sel=[...picked[cur]].map((i)=>m.items[i]);
+  const groups=[...new Set(sel.map((it)=>it[0]))];
+  return {n:sel.length,g:groups,sum:sel.reduce((a,it)=>a+it[2],0),fee:groups.reduce((a,g)=>a+G[g].fee,0)};
+}
+function drawList(){
+  const m=M[cur],t=totals();let h='';
+  if(miss)h+='<div class="note f">No moment for that yet. Try one of the moments above.</div>';
+  if(member)h+='<div class="note m"><b>noon One</b> · Free delivery on everything in this basket'+(t.g.length>1?', across '+t.g.length+' services.':'.')+'</div>';
+  else h+='<div class="note n"><b>One membership, free delivery across all of these.</b> Try noon One.</div>';
+  for(const g of m.order){
+    const its=m.items.map((it,i)=>[it,i]).filter((x)=>x[0][0]===g);
+    if(!its.length)continue;
+    h+='<div class="grp"><div class="grp-h"><b>'+G[g].t+'</b><span>'+G[g].s+'</span></div>';
+    for(const [it,i] of its){
+      const on=picked[cur].has(i);
+      h+='<div class="card"><div class="thumb '+G[g].c+'">'+ICON[it[3]]+'</div><div><div class="nm">'+esc(it[1])+'</div><div class="meta"><span class="price">AED '+it[2]+'</span>'
+        +(g==='tom'?'<span class="badge ret">Easy returns</span>':'')
+        +(g==='pro'?'<span class="badge">Vetted pro</span>':'')
+        +(member&&G[g].fee?'<span class="badge">Free delivery</span>':'')
+        +(it[5]==='sp'?'<span class="badge sp">Sponsored</span>':'')
+        +'</div></div><button class="add" data-i="'+i+'" aria-pressed="'+on+'" aria-label="'+(on?'Remove ':'Add ')+esc(it[1])+'">'+(on?'✓':'+')+'</button></div>';
+    }
+    h+='</div>';
+  }
+  $('list').innerHTML=h;
+}
+function drawBasket(){
+  const t=totals();
+  if(!t.n){$('basket').innerHTML='<span>Your basket is empty. Add something from any service.</span>';return;}
+  const l='<span><b>'+t.n+' item'+(t.n>1?'s':'')+' · '+t.g.length+' service'+(t.g.length>1?'s':'')+'</b><br>One checkout</span>';
+  const r=member?'<span class="r"><b>AED '+t.sum+'</b><br><span class="free">Free delivery'+(t.fee?' · AED '+t.fee+' saved':'')+'</span></span>'
+               :'<span class="r"><b>AED '+(t.sum+t.fee)+'</b><br>incl. AED '+t.fee+' delivery</span>';
+  $('basket').innerHTML=l+r;
+}
+function drawTest(){
+  const m=M[cur];
+  $('t-for').textContent='Moment: '+m.label;
+  $('t-h').textContent=m.h;$('t-a').textContent=m.a;$('t-m').textContent=m.m;
+  $('t-g').innerHTML=GR.map((g)=>'<span>'+g+'</span>').join('');
+}
+function draw(scroll){
+  drawChips();drawList();drawBasket();drawTest();
+  $('v-new').setAttribute('aria-pressed',String(!member));$('v-mem').setAttribute('aria-pressed',String(member));
+  if(scroll)$('list').scrollTop=0;
+}
+$('chips').addEventListener('click',(e)=>{const b=e.target.closest('.chip');if(!b)return;cur=b.dataset.m;miss=false;$('q').value='';draw(true);});
+$('list').addEventListener('click',(e)=>{const b=e.target.closest('.add');if(!b)return;const i=+b.dataset.i,s=picked[cur];s.has(i)?s.delete(i):s.add(i);const y=$('list').scrollTop;drawList();drawBasket();$('list').scrollTop=y;});
+$('v-new').addEventListener('click',()=>{member=false;draw(false);});
+$('v-mem').addEventListener('click',()=>{member=true;draw(false);});
+function find(force){
+  const v=$('q').value.trim().toLowerCase();
+  if(!v){if(miss){miss=false;drawList();}return;}
+  const hit=Object.keys(M).find((k)=>M[k].k.test(v));
+  if(hit){const ch=hit!==cur||miss;cur=hit;miss=false;if(ch)draw(true);}
+  else if(force||v.length>=4){if(!miss){miss=true;drawList();$('list').scrollTop=0;}}
+}
+$('q').addEventListener('input',()=>find(false));
+$('q').addEventListener('keydown',(e)=>{if(e.key==='Enter'){e.preventDefault();find(true);}});
+draw(true);
+}
+</script>
+</body>
+</html>
