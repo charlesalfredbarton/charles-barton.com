@@ -32,16 +32,35 @@ a{color:inherit}
 .light .sec-sub{color:#4a5868}
 
 /* hero */
-.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(24px,4vw,64px);align-items:start}
-.hero h1{font-size:clamp(34px,5vw,56px)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(24px,5vw,80px);align-items:start}
+.hero-l{align-self:center}
+header.band{padding-top:clamp(24px,3vw,40px);padding-bottom:clamp(24px,3vw,40px)}
+.hero h1{font-size:clamp(32px,4.4vw,50px)}
 .hero h1 em{font-style:normal;color:var(--aqua)}
-.sub{font-size:clamp(17px,1.6vw,20px);color:var(--ivory);margin-top:16px;max-width:34ch}
+.sub{font-size:clamp(16px,1.5vw,19px);color:var(--ivory);margin-top:12px;max-width:44ch}
 .fine{font-size:13px;color:var(--mist);margin-top:12px}
 .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:28px;padding:0;list-style:none;counter-reset:s}
 .steps li{counter-increment:s;background:var(--raised);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.35}
 .steps li::before{content:counter(s);display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--aqua);color:var(--mid);font-weight:700;font-size:13px;margin-bottom:8px}
 .steps b{display:block;font-weight:600}
 .steps span{color:var(--mist)}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px;max-width:620px}
+.ba-c{border-radius:12px;padding:12px 14px;font-size:13.5px;line-height:1.4}
+.ba-c small{display:block;font-size:12px;font-weight:600;margin-bottom:2px}
+.ba-c b{display:block;font-size:16px;margin-bottom:3px}
+.ba-c.old{border:1px dashed var(--line);color:var(--mist)}.ba-c.old b{color:var(--ivory);text-decoration:line-through;text-decoration-color:rgba(167,179,195,.6)}
+.ba-c.new{background:var(--raised);border:1px solid var(--aqua)}.ba-c.new small{color:var(--aqua)}.ba-c.new span{color:var(--mist)}
+.how{background:var(--raised);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-top:10px;max-width:620px}
+.tst{border-top:1px solid var(--line);margin-top:12px;padding-top:11px;font-size:13.5px;line-height:1.5;color:var(--mist)}.tst b{color:var(--aqua);font-weight:600}
+.flow{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:f;font-size:14px;color:var(--mist)}
+.flow li{counter-increment:f;display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;align-items:start}
+.flow li::before{content:counter(f);display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--aqua);color:var(--mid);font-weight:700;font-size:12px}
+.flow b{color:var(--ivory);font-weight:600}
+.und{display:flex;flex-wrap:wrap;align-items:center;gap:5px;margin-top:8px;font-size:12px}
+.und:empty{display:none}
+.und .lb{color:#4353C8;font-weight:600;display:inline-flex;align-items:center;gap:4px}
+.und .t{background:#E9ECFB;color:#27328A;border-radius:6px;padding:2px 7px;font-weight:500;white-space:nowrap}
+.why{font-size:11.5px;color:#3545B5;margin-top:4px;line-height:1.35}
 .test{margin-top:16px;background:var(--raised);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
 .test h3{font-size:20px;margin-bottom:4px}
 .test .for{font-size:13px;color:var(--aqua);font-weight:600;margin-bottom:12px}
@@ -54,7 +73,7 @@ a{color:inherit}
 /* phone */
 .stage{display:flex;flex-direction:column;align-items:center}
 .phone{width:372px;max-width:100%;background:#0a0f18;border-radius:44px;padding:10px;box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 0 1px #2a3a52}
-.screen{background:#F4F5F7;color:#161B26;border-radius:35px;overflow:hidden;display:flex;flex-direction:column;height:724px;font-family:Inter,system-ui,sans-serif;color-scheme:light}
+.screen{background:#F4F5F7;color:#161B26;border-radius:35px;overflow:hidden;display:flex;flex-direction:column;height:clamp(500px,calc(100vh - 170px),700px);font-family:Inter,system-ui,sans-serif;color-scheme:light}
 .status{display:flex;justify-content:space-between;align-items:center;padding:12px 22px 4px;font-size:13px;font-weight:600}
 .tag{background:#161B26;color:#fff;border-radius:99px;padding:2px 10px;font-size:11px;font-weight:600}
 .top{padding:8px 16px 0;background:#F4F5F7}
@@ -96,7 +115,7 @@ a{color:inherit}
 .nav{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-top:1px solid #E6E9EF;padding:8px 6px 12px;font-size:11px;color:#7A8394;text-align:center}
 .nav div{display:grid;justify-items:center;gap:3px}
 .nav .on{color:var(--app);font-weight:600}
-.cap{font-size:13px;color:var(--mist);text-align:center;margin-top:14px;max-width:340px}
+.cap{font-size:12.5px;line-height:1.45;color:var(--mist);text-align:center;margin-top:10px;max-width:372px}
 button:focus-visible,a:focus-visible{outline:2px solid var(--aqua);outline-offset:2px}
 
 /* shifts */
@@ -159,6 +178,7 @@ footer a{white-space:nowrap}
 
 @media(max-width:940px){
   .hero{grid-template-columns:minmax(0,1fr)}
+  .ba,.how{max-width:none}
   .stage{order:2}.below{order:3}
   .hero-l{display:contents}
   .intro{order:1}
@@ -166,6 +186,7 @@ footer a{white-space:nowrap}
   .vis{min-height:0}
 }
 @media(max-width:600px){
+  .ba{grid-template-columns:minmax(0,1fr)}
   .steps,.row,.qs,.days{grid-template-columns:minmax(0,1fr)}
   .days{border-top:0;border-left:2px solid var(--teal);margin-left:6px}
   .days li{padding:0 0 16px 18px}
@@ -188,25 +209,20 @@ footer a{white-space:nowrap}
       <div class="intro">
         <p class="eyebrow">noon · VP - Product · A leadership preview by Charles Barton</p>
         <h1>From the category tree to the customer's <em>moment</em>.</h1>
-        <p class="sub">A working concept for noon's consumer app: one intent, every service.</p>
-        <p class="fine">Prepared from public information, November 2026. Hypotheses to test with you, not conclusions.</p>
+        <p class="sub">An AI-assisted concept for noon's consumer app: one intent, every service.</p>
       </div>
       <div class="below">
-        <ol class="steps">
-          <li><b>Pick a moment</b><span>Not a category.</span></li>
-          <li><b>See every service that solves it</b><span>Grouped by speed.</span></li>
-          <li><b>One basket</b><span>One membership saving.</span></li>
-        </ol>
-        <section class="test" aria-live="polite">
-          <h3>The test behind it</h3>
-          <p class="for" id="t-for"></p>
-          <dl>
-            <dt>Hypothesis</dt><dd id="t-h"></dd>
-            <dt>Audience</dt><dd id="t-a"></dd>
-            <dt>Primary metric</dt><dd id="t-m"></dd>
-            <dt>Guardrails</dt><dd><div class="pills" id="t-g"></div></dd>
-            <dt>Readout</dt><dd>Two weeks.</dd>
-          </dl>
+        <div class="ba">
+          <div class="ba-c old"><small>Today</small><b>4 searches, 4 sections</b><span>Snacks in Minutes, dinner in Food, bowls in the marketplace, a cleaner in services.</span></div>
+          <div class="ba-c new"><small>With intent</small><b>1 sentence, 1 basket</b><span>The app understands the request and assembles every service that solves it.</span></div>
+        </div>
+        <section class="how" aria-live="polite">
+          <ol class="flow">
+            <li><span><b>Understand the request.</b> AI reads any phrasing: who, how many, by when, preferences.</span></li>
+            <li><span><b>Assemble across services.</b> Ranked by arrival time, availability and margin.</span></li>
+            <li><span><b>One basket.</b> One checkout, one membership saving.</span></li>
+          </ol>
+          <p class="tst"><b>The test behind it.</b> <span id="t-h"></span> Guardrails: margin per order, search conversion, delivery cost. Readout in two weeks.</p>
         </section>
       </div>
     </div>
@@ -220,6 +236,7 @@ footer a{white-space:nowrap}
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
               <input id="q" type="search" placeholder="What do you need today?" autocomplete="off" aria-label="What do you need today?">
             </label>
+            <div class="und" id="und" aria-live="polite"></div>
             <div class="chips" id="chips" role="group" aria-label="Moments"></div>
             <div class="seg" role="group" aria-label="Customer view">
               <button id="v-new" aria-pressed="true">New customer</button>
@@ -236,7 +253,7 @@ footer a{white-space:nowrap}
           </div>
         </div>
       </div>
-      <p class="cap">Concept built from public information. Not a noon product; sample data. Tap a moment, switch the customer view, add items.</p>
+      <p class="cap">Concept built from public information, November 2026. Not a noon product; sample data and scripted understanding. Hypotheses to test with you, not conclusions.</p>
     </div>
   </div>
 </header>
@@ -349,63 +366,99 @@ const G={
   pro:{t:'Book a pro',s:'Home services · pick a slot',c:'t-pro',fee:0,svc:'home services'}
 };
 const GR=['Contribution margin per order','Core search conversion','Delivery cost per order','App speed'];
+// item: [group, name, price, icon, preselected, sponsored, why codes]
+// why codes: 'arr' arrival before the stated time, 'serves' serves N, 'veg' vegetarian (when asked), other strings shown as is
 const M={
-  guests:{label:'Guests coming tonight',order:['min','ton','tom','pro'],
-    k:/\b(guests?|host(ing)?|party|dinner|visitors?|friends)\b/,
+  guests:{label:'Guests coming tonight',ex:'6 friends coming at 8, one is vegetarian',order:['min','ton','tom','pro'],
+    k:/\b(guests?|host(ing)?|party|dinner|visitors?|friends|coming over|in.?laws|family over)\b/,
     items:[
-      ['min','Party snacks and soft drinks bundle',45,'bag',1],['min','Ice and disposable cups',18,'cup',0,'sp'],
-      ['ton','Sharing platter for six, nearby restaurant',149,'plate',1],['ton','Dessert box',65,'cake',0,'sp'],
-      ['tom','Serving bowls set',89,'bowl',1],['tom','Scented candles',49,'candle',0,'sp'],
-      ['pro','Home cleaning, 2 hours, before guests arrive',120,'clean',1]],
-    h:'Starting from "Guests coming tonight" lifts customers ordering from 2+ services within 30 days.',
+      ['min','Party snacks and soft drinks bundle',45,'bag',1,0,['arr','serves','veg']],['min','Ice and disposable cups',18,'cup',0,'sp',['arr']],
+      ['ton','Sharing platter for six, nearby restaurant',149,'plate',1,0,['arr','serves','Includes vegetarian options']],['ton','Dessert box',65,'cake',0,'sp',['arr','serves']],
+      ['tom','Serving bowls set',89,'bowl',1,0,['For next time; you have no serving set on past orders']],['tom','Scented candles',49,'candle',0,'sp',[]],
+      ['pro','Home cleaning, 2 hours, before guests arrive',120,'clean',1,0,['Slot 4 to 6 pm, done before guests arrive']]],
+    h:'Starting from a stated need ("guests tonight") lifts customers ordering from 2+ services within 30 days.',
     a:'10% of UAE app users; new and member cohorts read separately.',
     m:'Customers ordering from 2+ services within 30 days.'},
-  low:{label:'Running low',order:['min','tom'],
-    k:/\b(low|milk|eggs?|bread|grocer(y|ies)|usual|top.?up|restock|water)\b/,
+  low:{label:'Running low',ex:'out of milk and eggs again',order:['min','tom'],
+    k:/\b(low|out of|milk|eggs?|bread|grocer(y|ies)|usual|top.?up|restock|water)\b/,
     items:[
-      ['min','Your usual top-up: milk, eggs, bread, water',58,'basket',1],['min','Fresh fruit box',36,'bag',0,'sp'],
-      ['tom','Laundry detergent, bulk pack',64,'carton',1],['tom','Dishwasher tablets, 60 pack',52,'box',0,'sp']],
+      ['min','Your usual top-up: milk, eggs, bread, water',58,'basket',1,0,['Your usual brands, from your last 5 orders','Arrives in about 15 min']],['min','Fresh fruit box',36,'bag',0,'sp',[]],
+      ['tom','Laundry detergent, bulk pack',64,'carton',1,0,['You usually reorder this about now']],['tom','Dishwasher tablets, 60 pack',52,'box',0,'sp',[]]],
     h:'A one-tap "your usual" basket lifts weekly order frequency for customers with two or more quick-commerce orders.',
     a:'Repeat quick-commerce customers in Dubai; 10% test group.',
     m:'Orders per customer per week; share adding a marketplace item to the same basket.'},
-  ac:{label:'AC needs fixing',order:['pro','min','tom'],
+  ac:{label:'AC needs fixing',ex:'AC stopped cooling in the bedroom',order:['pro','min','tom'],
     k:/\b(ac|a\/c|air.?con(ditioner|ditioning)?|cooling|repair|fix(ing)?|broken|technician)\b/,
     items:[
-      ['pro','AC repair visit, today, vetted technician',149,'wrench',1],['pro','AC deep clean, two units',199,'clean',0],
-      ['min','Desk fan',79,'fan',1],
-      ['tom','Tower fan with remote',249,'fan',0,'sp'],['tom','AC filters, pack of two',45,'box',0]],
-    h:'Showing a bookable service first for a repair intent lifts first-time home-services bookings without hurting product conversion.',
+      ['pro','AC repair visit, today, vetted technician',149,'wrench',1,0,['Next slot today, 2 to 4 pm']],['pro','AC deep clean, two units',199,'clean',0,0,['Often fixes weak cooling']],
+      ['min','Desk fan',79,'fan',1,0,['Cool the room until the technician arrives']],
+      ['tom','Tower fan with remote',249,'fan',0,'sp',[]],['tom','AC filters, pack of two',45,'box',0,0,['Fits common split units']]],
+    h:'Showing a bookable service first for a repair request lifts first-time home-services bookings without hurting product conversion.',
     a:'UAE customers searching repair-type terms; 10% test group.',
     m:'First home-services booking within 7 days of the search.'},
-  move:{label:'Moving flat',order:['tom','pro','min','ton'],
+  move:{label:'Moving flat',ex:'moving to a new flat on Saturday',order:['tom','pro','min','ton'],
     k:/\b(mov(e|ing|ers)|flat|apartment|relocat\w*|boxes|new home)\b/,
     items:[
-      ['tom','Moving boxes, pack of 20, with tape',75,'box',1],['tom','Starter kitchen set, 12 pieces',199,'pot',0,'sp'],
-      ['pro','Movers with a truck, half day',450,'truck',1],['pro','Move-in deep clean',260,'clean',0],
-      ['min','Cleaning supplies bundle',55,'bag',1],
-      ['ton','Dinner for moving day, family meal',69,'plate',0]],
+      ['tom','Moving boxes, pack of 20, with tape',75,'box',1,0,['Arrives before Saturday']],['tom','Starter kitchen set, 12 pieces',199,'pot',0,'sp',[]],
+      ['pro','Movers with a truck, half day',450,'truck',1,0,['Saturday morning slot']],['pro','Move-in deep clean',260,'clean',0,0,['Book for Friday, the day before']],
+      ['min','Cleaning supplies bundle',55,'bag',1,0,[]],
+      ['ton','Dinner for moving day, family meal',69,'plate',0,0,['Delivered to the new address']]],
     h:'A guided "moving" basket raises basket value and brings a first home-services booking, at a healthy margin.',
     a:'Customers who change their delivery address or search moving terms; 10% test group.',
     m:'Basket value per moving customer; services attached per basket.'},
-  iftar:{label:'Ramadan: hosting iftar',order:['min','ton','tom','pro'],
+  iftar:{label:'Ramadan: hosting iftar',ex:'hosting iftar for 8 this Friday',order:['min','ton','tom','pro'],
     k:/\b(ramadan|iftar|suhoor|dates)\b/,
     items:[
-      ['min','Dates and fresh juices',42,'bag',1],['min','Samosa and starter pack',34,'box',0,'sp'],
-      ['ton','Iftar catering box for six',189,'pot',1],
-      ['tom','Serving dishes set',99,'bowl',1],['tom','Lanterns and table lights',59,'candle',0,'sp'],
-      ['pro','Deep clean before Ramadan',220,'clean',0]],
+      ['min','Dates and fresh juices',42,'bag',1,0,['serves']],['min','Samosa and starter pack',34,'box',0,'sp',['serves']],
+      ['ton','Iftar catering box for eight',189,'pot',1,0,['Timed for sunset','serves']],
+      ['tom','Serving dishes set',99,'bowl',1,0,['Arrives before Friday']],['tom','Lanterns and table lights',59,'candle',0,'sp',[]],
+      ['pro','Deep clean before Ramadan',220,'clean',0,0,[]]],
     h:'A seasonal "hosting iftar" moment, live two weeks before Ramadan, lifts customers ordering from 2+ services through the month.',
     a:'UAE and KSA app users; 10% test group; member and non-member cohorts.',
     m:'Customers ordering from 2+ services during Ramadan; noon One activations.'}
 };
 const $=(id)=>document.getElementById(id);
 const esc=(s)=>String(s).replace(/[&<>"']/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let cur='guests',member=false,miss=false;
+let cur='guests',member=false,miss=false,intent={};
 const picked={};
 for(const k in M)picked[k]=new Set(M[k].items.map((it,i)=>it[4]?i:-1).filter((i)=>i>=0));
+const WORDN={two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10,twelve:12};
 
+function parse(v){
+  const t=v.toLowerCase(),o={};
+  o.m=['iftar','ac','move','guests','low'].find((k)=>M[k].k.test(t));
+  let n=t.match(/\b(\d{1,2})\s*(people|persons|friends|guests|of us|pax|adults|ppl)\b/)||t.match(/\bfor\s+(\d{1,2})\b/)||t.match(/^\s*(\d{1,2})\b/);
+  if(n)o.n=+n[1];else{const w=t.match(/\b(two|three|four|five|six|seven|eight|nine|ten|twelve)\b/);if(w)o.n=WORDN[w[1]];}
+  const tm=t.match(/\b(?:at|by|around|for)\s+(\d{1,2})(?::(\d{2}))?\s*(am|pm)?\b/);
+  if(tm&&!(o.n&&+tm[1]===o.n&&!tm[3]&&/for\s/.test(tm[0]))){let h=+tm[1];const mi=tm[2]?+tm[2]:0;if(tm[3]==='pm'&&h<12)h+=12;if(!tm[3]&&h<11)h+=12;if(h<24)o.time=[h,mi];}
+  if(/\b(vegetarian|veggie|vegan|no meat)\b/.test(t))o.veg=true;
+  const d=t.match(/\b(tonight|today|tomorrow|this weekend|(?:this |on )?(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday))\b/);if(d)o.when=d[1].replace(/^(this|on) /,'');
+  return o;
+}
+function hm(h,m){const H=((h+11)%12)+1;return H+(m?':'+String(m).padStart(2,'0'):'')+(h<12?' am':' pm');}
+function arrive(g){if(!intent.time||!['min','ton'].includes(g))return null;let mins=intent.time[0]*60+intent.time[1]-(g==='min'?45:20);return 'Arrives by '+hm(Math.floor(mins/60),mins%60);}
+function whyOf(it){
+  const out=[];
+  for(const w of it[6]||[]){
+    if(w==='arr'){const a=arrive(it[0]);if(a)out.push(a);}
+    else if(w==='serves'){if(intent.n)out.push('Serves '+intent.n);}
+    else if(w==='veg'){if(intent.veg)out.push('Vegetarian options');}
+    else out.push(w);
+  }
+  if(member&&G[it[0]].fee)out.push('Free with noon One');
+  return out;
+}
+function drawUnd(){
+  if(miss){$('und').innerHTML='';return;}
+  const t=[M[cur].label];
+  if(intent.n)t.push(intent.n+' people');
+  if(intent.time)t.push('by '+hm(intent.time[0],intent.time[1]));
+  if(intent.when)t.push(intent.when.charAt(0).toUpperCase()+intent.when.slice(1));
+  if(intent.veg)t.push('Vegetarian');
+  $('und').innerHTML='<span class="lb"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.2 6.3L20 10l-5.8 1.7L12 18l-2.2-6.3L4 10l5.8-1.7z"/></svg>Understood as</span>'+t.map((x)=>'<span class="t">'+esc(x)+'</span>').join('');
+}
 function drawChips(){
-  $('chips').innerHTML=Object.keys(M).map((k)=>'<button class="chip" data-m="'+k+'" aria-pressed="'+(k===cur)+'">'+esc(M[k].label)+'</button>').join('');
+  $('chips').innerHTML=Object.keys(M).map((k)=>'<button class="chip" data-m="'+k+'" aria-pressed="'+(k===cur&&!miss)+'">'+esc(M[k].label)+'</button>').join('');
 }
 function totals(){
   const m=M[cur],sel=[...picked[cur]].map((i)=>m.items[i]);
@@ -414,7 +467,7 @@ function totals(){
 }
 function drawList(){
   const m=M[cur],t=totals();let h='';
-  if(miss)h+='<div class="note f">No moment for that yet. Try one of the moments above.</div>';
+  if(miss){$('list').innerHTML='<div class="note f">Not sure what you need yet. Try "6 friends coming at 8" or tap a moment above.</div>';return;}
   if(member)h+='<div class="note m"><b>noon One</b> · Free delivery on everything in this basket'+(t.g.length>1?', across '+t.g.length+' services.':'.')+'</div>';
   else h+='<div class="note n"><b>One membership, free delivery across all of these.</b> Try noon One.</div>';
   for(const g of m.order){
@@ -422,13 +475,13 @@ function drawList(){
     if(!its.length)continue;
     h+='<div class="grp"><div class="grp-h"><b>'+G[g].t+'</b><span>'+G[g].s+'</span></div>';
     for(const [it,i] of its){
-      const on=picked[cur].has(i);
+      const on=picked[cur].has(i),why=whyOf(it);
       h+='<div class="card"><div class="thumb '+G[g].c+'">'+ICON[it[3]]+'</div><div><div class="nm">'+esc(it[1])+'</div><div class="meta"><span class="price">AED '+it[2]+'</span>'
         +(g==='tom'?'<span class="badge ret">Easy returns</span>':'')
         +(g==='pro'?'<span class="badge">Vetted pro</span>':'')
-        +(member&&G[g].fee?'<span class="badge">Free delivery</span>':'')
         +(it[5]==='sp'?'<span class="badge sp">Sponsored</span>':'')
-        +'</div></div><button class="add" data-i="'+i+'" aria-pressed="'+on+'" aria-label="'+(on?'Remove ':'Add ')+esc(it[1])+'">'+(on?'✓':'+')+'</button></div>';
+        +'</div>'+(why.length?'<div class="why">Why: '+why.map(esc).join(' · ')+'</div>':'')
+        +'</div><button class="add" data-i="'+i+'" aria-pressed="'+on+'" aria-label="'+(on?'Remove ':'Add ')+esc(it[1])+'">'+(on?'✓':'+')+'</button></div>';
     }
     h+='</div>';
   }
@@ -436,37 +489,32 @@ function drawList(){
 }
 function drawBasket(){
   const t=totals();
-  if(!t.n){$('basket').innerHTML='<span>Your basket is empty. Add something from any service.</span>';return;}
+  if(miss||!t.n){$('basket').innerHTML='<span>Your basket is empty. Tell the app what you need.</span>';return;}
   const l='<span><b>'+t.n+' item'+(t.n>1?'s':'')+' · '+t.g.length+' service'+(t.g.length>1?'s':'')+'</b><br>One checkout</span>';
-  const r=member?'<span class="r"><b>AED '+t.sum+'</b><br><span class="free">Free delivery'+(t.fee?' · AED '+t.fee+' saved':'')+'</span></span>'
+  const r=member?'<span class="r"><b>AED '+t.sum+'</b><br><span class="free">Free delivery'+(t.fee?', AED '+t.fee+' saved':'')+'</span></span>'
                :'<span class="r"><b>AED '+(t.sum+t.fee)+'</b><br>incl. AED '+t.fee+' delivery</span>';
   $('basket').innerHTML=l+r;
 }
-function drawTest(){
-  const m=M[cur];
-  $('t-for').textContent='Moment: '+m.label;
-  $('t-h').textContent=m.h;$('t-a').textContent=m.a;$('t-m').textContent=m.m;
-  $('t-g').innerHTML=GR.map((g)=>'<span>'+g+'</span>').join('');
-}
+function drawTest(){$('t-h').textContent=M[cur].h;}
 function draw(scroll){
-  drawChips();drawList();drawBasket();drawTest();
+  drawUnd();drawChips();drawList();drawBasket();drawTest();
   $('v-new').setAttribute('aria-pressed',String(!member));$('v-mem').setAttribute('aria-pressed',String(member));
   if(scroll)$('list').scrollTop=0;
 }
-$('chips').addEventListener('click',(e)=>{const b=e.target.closest('.chip');if(!b)return;cur=b.dataset.m;miss=false;$('q').value='';draw(true);});
+function run(v,force){
+  const o=parse(v);
+  if(!v.trim()){return;}
+  if(o.m){cur=o.m;miss=false;intent=o;draw(true);}
+  else if(force||v.trim().length>=6){miss=true;intent={};draw(true);}
+}
+$('chips').addEventListener('click',(e)=>{const b=e.target.closest('.chip');if(!b)return;$('q').value=M[b.dataset.m].ex;run($('q').value,true);});
 $('list').addEventListener('click',(e)=>{const b=e.target.closest('.add');if(!b)return;const i=+b.dataset.i,s=picked[cur];s.has(i)?s.delete(i):s.add(i);const y=$('list').scrollTop;drawList();drawBasket();$('list').scrollTop=y;});
 $('v-new').addEventListener('click',()=>{member=false;draw(false);});
 $('v-mem').addEventListener('click',()=>{member=true;draw(false);});
-function find(force){
-  const v=$('q').value.trim().toLowerCase();
-  if(!v){if(miss){miss=false;drawList();}return;}
-  const hit=Object.keys(M).find((k)=>M[k].k.test(v));
-  if(hit){const ch=hit!==cur||miss;cur=hit;miss=false;if(ch)draw(true);}
-  else if(force||v.length>=4){if(!miss){miss=true;drawList();$('list').scrollTop=0;}}
-}
-$('q').addEventListener('input',()=>find(false));
-$('q').addEventListener('keydown',(e)=>{if(e.key==='Enter'){e.preventDefault();find(true);}});
-draw(true);
+let tmr;
+$('q').addEventListener('input',()=>{clearTimeout(tmr);tmr=setTimeout(()=>run($('q').value,false),350);});
+$('q').addEventListener('keydown',(e)=>{if(e.key==='Enter'){e.preventDefault();clearTimeout(tmr);run($('q').value,true);}});
+$('q').value=M.guests.ex;run(M.guests.ex,true);
 }
 </script>
 </body>
